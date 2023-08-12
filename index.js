@@ -11,6 +11,11 @@ let clearDisplay = () => {
   display.value = "";
 };
 
+let deleteLastEntry = () => {
+  currentExpression = currentExpression.slice(0, -1);
+  display.value = currentExpression;
+};
+
 let calculate = () => {
   try {
     let result = evaluateExpression(currentExpression);
@@ -33,7 +38,7 @@ function evaluateExpression(expression) {
     "/": 2,
   };
 
-  const tokens = expression.match(/\d+|[+\-*/]/g);
+  const tokens = expression.match(/\d+(\.\d+)?|[+\-*/]/g);
 
   tokens.forEach((token) => {
     if (!isNaN(token)) {
