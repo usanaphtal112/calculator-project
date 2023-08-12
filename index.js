@@ -22,7 +22,6 @@ let calculate = () => {
   }
 };
 
-// Custom expression evaluation function
 function evaluateExpression(expression) {
   let operators = [];
   let operands = [];
